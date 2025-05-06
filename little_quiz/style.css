@@ -1,0 +1,128 @@
+:root{
+    --cor-fundo: #fff;
+    --cor-botoes: #000;
+    --cor-texto: #ffff00;
+    --cor-certo: #adff2f;
+    --cor-errado: #ff0000;
+    --cor-proximo: #8a2be2;
+}
+
+
+
+body {
+    font-family:Arial, sans-sherif;
+    /*background-color:white;
+    */text-align: center;
+    padding: 32px;
+}
+
+.cotainer {
+    background-color: var(--cor-fundo);
+    padding: 32px;
+    margin: auto;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resposta {
+    width: 60%;
+    max-width: 300px;
+    display:block;
+    padding: 25px;
+    margin: 10px auto;
+    font-size: 16px;
+    background-color: var(--cor-botoes);
+    color: var(--cor-texto);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.reposta:hover {
+    background-color: var(--cor-certo);
+}
+
+.proxima, .reiniciar {
+    padding: 10px 20px;
+    background-color: var(--cor-proximo);
+    color: var(--cor-fundo);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.fim{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--cor-botoes);
+}
+
+.errado{
+    color:var(--cor-errado);
+    font-weight: bold;
+}
+/*--------------------------------------------------------------------------------------------
+/* Daqui para baixo é a implementação de um botão para alteração de modo claro e escuro
+/* Estilo geral */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+    
+/* Tema claro */
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-botoes);
+}
+
+/* Checkbox invisível */
+#toggle {
+  display: none;
+}
+
+/* Botão estilizado */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 30px;
+  background: #000;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-btn::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 3px;
+  left: 3px;
+  background: var(--cor-proximo);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* Quando ativado (modo escuro) */
+#toggle:checked + .toggle-btn {
+  background: #fff;
+}
+
+#toggle:checked + .toggle-btn::before {
+  transform: translateX(30px);
+}
+
+/* Modo escuro com :has() no body */
+body:has(#toggle:checked) {
+    background: #1a1a1a;
+    color: #f5f5f5;
+}
+  
